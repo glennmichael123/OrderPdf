@@ -22,7 +22,7 @@ class OrderPdfController extends Controller
     {
         $data = Order::findOrFail($id);
 
-        $pdf = Pdf::loadView('pdf.order', $data);
+        $pdf = Pdf::loadView('pdf.result', $data);
 
         Mail::to($data->email)->send(new SendPdfToCustomer($data, $pdf));
 
@@ -40,8 +40,8 @@ class OrderPdfController extends Controller
     {
         $data = Order::findOrFail($id);
 
-        $pdf = Pdf::loadView('pdf.order', $data);
+        $pdf = Pdf::loadView('pdf.result', $data);
 
-        return $pdf->download();
+        return $pdf->stream();
     }
 }

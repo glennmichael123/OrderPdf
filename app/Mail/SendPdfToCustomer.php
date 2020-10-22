@@ -12,9 +12,19 @@ class SendPdfToCustomer extends Mailable
 {
     use Queueable, SerializesModels;
 
-    protected $order;
+    /**
+     * The order instance.
+     *
+     * @var Order
+     */
+    public $order;
 
-    protected $pdf;
+    /**
+     * The order instance.
+     *
+     * @var pdf
+     */
+    public $pdf;
     /**
      * Create a new message instance.
      *
@@ -35,6 +45,6 @@ class SendPdfToCustomer extends Mailable
     public function build()
     {
         return $this->view('mail.sendpdf')
-            ->attachData($this->pdf->output(), 'order.pdf');
+            ->attachData($this->pdf->output(), 'PCRResult.pdf');
     }
 }
