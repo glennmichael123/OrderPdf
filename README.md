@@ -16,7 +16,7 @@ Don't forget to fill your mail credentials in your `.env`
 | GET|HEAD    | api/orders/{order}                       |
 | POST|HEAD   | api/orders                               |
 | PATCH|HEAD  | api/orders/{order}                       |
-| DELETE|HEAD | api/{order}                              |
+| DELETE|HEAD | api/orders/{order}                       |
 | GET|HEAD    | api/order-pdf/mail/{id}                  |
 | GET|HEAD    | api/order-pdf/export/{id}                |
 +----------+---------------------------------------------+
